@@ -1,1 +1,37 @@
-<p>This is the partial for view 1.</p>
+        <div class="row">
+          <div class="col-md-3 col-md-offset-3">
+            <h2>Rf Calculator</h2>
+            <div class="row well">
+                  <div class="btn-group" >
+                   <label class="btn btn-primary"><input value="R59" ng-model="calculator.which_cable" type="radio" name="cabletype" class="btn btn-default">RG-59</label>
+                   <label class="btn btn-primary"><input value="R6" ng-model="calculator.which_cable" type="radio" name="cabletype" class="btn btn-default">RG-6</label>
+                   <label class="btn btn-primary"><input value="R7" ng-model="calculator.which_cable" type="radio" name="cabletype" class="btn btn-default">RG-7</label>
+                   <label class="btn btn-primary"><input value="R11" ng-model="calculator.which_cable" type="radio" name="cabletype" class="btn btn-default">RG-11</label>
+                  </div>
+                  <p>
+                  <form role="form">
+                    <div class="form-group">
+                      <label for="frequency">Frequency</label>
+                      <input type="input" ng-model="calculator.frequency" ng-pattern="/^\d+(\.\d+)?$/" class="form-control" id="frequency" placeholder="Frequency">
+                    </div>
+                    <div class="form-group">
+                      <label for="loss">Loss</label>
+                      <div class="input-group">
+                      <span class="input-group-addon"><input name="sel-field" type="radio" ng-model="calculator.which_calc" value="loss"></span>
+                      <input type="input" class="form-control" id="loss" placeholder="Loss" ng-model="calculator.loss"  ng-pattern="/^\d+(\.\d+)?$/">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="loss">Distance(Feet)</label>
+                      <div class="input-group">
+                      <span class="input-group-addon"><input name="sel-field" type="radio" ng-model="calculator.which_calc" value="distance"></span>
+                      <input type="input" class="form-control" id="distance" placeholder="Distance" ng-model="calculator.distance"  ng-pattern="/^\d+(\.\d+)?$/">
+                      </div>
+                    </div>
+                    <button type="button" ng-click="calculator.calculate()" class="btn btn-primary">Estimate</button>
+                  </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
